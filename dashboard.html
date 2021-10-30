@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Da acesso a lib através do cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="header">
+      <div class="container">
+        <h1><span class="highlight">Salarios</span> no Brasil</h1>
+      </div>
+    </div>
+
+    
+      </div>
+
+      <!-- Gráficos -->
+      <div class="graph">
+        <canvas id="myChart" style="width: 100%; height: 100%"></canvas>
+      </div>
+
+      <div class="graph">
+        <canvas id="myChart2" style="width: 100%; height: 100%"></canvas>
+      </div>
+      </div>
+
+      <div class="graph">
+        <canvas id="myChart3" style="width: 100%; height: 100%"></canvas>
+
+      </div>
+    </div>
+  </body>
+
+</html>
+<script>
+  // Inicia uma variável do tipo constante (não pode ser reatribuida)
+  const config = { 
+    type: "line", // tipo do gráfico
+    data: { // objeto que vai conter os dados do gráfico
+      labels: ["2011", "2016", "2021"], // labels (rótulos) que serão identificados os nossos dados 
+      datasets: [ // datasets (conjunto de dados)
+        {
+          label: "Salario minimo no Brasil", // irá conter o rótulo principal do nosso gráfico
+          data: [540, 880, 1100], // os dados referentes aqueles rótulos
+          backgroundColor: " #006400", // cor das "bolinhas" do gráfico
+          borderColor: "#008000" // cor da "linha" do gráfico
+        }
+      ]
+    },
+    options: {
+      maintainAspectRatio: false 
+      /* maintainAspectRatio (manter relação de aspecto) 
+        caso true: ele "obdece" a altura e largura que colocamos
+        caso false: ele não "obdece" a altura e largura que colocamos e se ajusta ao componente pai
+      */
+    }
+  }
+
+  var myChartLine = new Chart(document.getElementById("myChart"), config); 
+  /* aqui obrigatoriamente tem que colocar new Chart() para criar um novo chart 
+  e passar dentro dos (parênteses) o elemento canvas que você quer mandar e 
+  separado pela virgula o que você quer mandar, no nosso caso a config que fizemos 
+  */
+  const configi = { 
+      type: "bar", // tipo do gráfico
+    data: { // objeto que vai conter os dados do gráfico
+      labels: ["NORTE", "NORDESTE", "SUDESTE", "SUL", "CENTRO-OESTE"], // labels (rótulos) que serão identificados os nossos dados 
+      datasets: [ // datasets (conjunto de dados)
+        {
+          label: "Média de salarios por região", // irá conter o rótulo principal do nosso gráfico
+          data: [1711, 1539, 2585, 2499, 2498], // os dados referentes aqueles rótulos
+          backgroundColor: " #FF7F00", // cor das "bolinhas" do gráfico
+          borderColor: "#FF7F00" // cor da "linha" do gráfico
+        }
+      ]
+    },
+    options: {
+      maintainAspectRatio: false 
+      /* maintainAspectRatio (manter relação de aspecto) 
+        caso true: ele "obdece" a altura e largura que colocamos
+        caso false: ele não "obdece" a altura e largura que colocamos e se ajusta ao componente pai
+      */
+    }
+  }
+
+  var myChartLine = new Chart(document.getElementById("myChart2"), configi); 
+  /* aqui obrigatoriamente tem que colocar new Chart() para criar um novo chart 
+  e passar dentro dos (parênteses) o elemento canvas que você quer mandar e 
+  separado pela virgula o que você quer mandar, no nosso caso a config que fizemos 
+  */
+ 
+  const configurção = { 
+      type: "bar", // tipo do gráfico
+    data: { // objeto que vai conter os dados do gráfico
+      labels: ["BRASIL(TOTAL)", "NORTE", "NORDESTE", "SULDESTE", "SUL", "CENTRO-OESTE"], // labels (rótulos) que serão identificados os nossos dados 
+      datasets: [ // datasets (conjunto de dados)
+        {
+          label: "Desemprego por região", // irá conter o rótulo principal do nosso gráfico
+          data:[11, 10.6, 13.6, 11.4, 6.8, 9.3], // os dados referentes aqueles rótulos
+          backgroundColor: " #00f", // cor das "bolinhas" do gráfico
+          borderColor: "#00f" // cor da "linha" do gráfico
+        }
+      ]
+    },
+    options: {
+      indexAxis: 'y',
+      maintainAspectRatio: false 
+      /* maintainAspectRatio (manter relação de aspecto) 
+        caso true: ele "obdece" a altura e largura que colocamos
+        caso false: ele não "obdece" a altura e largura que colocamos e se ajusta ao componente pai
+      */
+    }
+  }
+
+  var myChartLine = new Chart(document.getElementById("myChart3"), configurção); 
+  /* aqui obrigatoriamente tem que colocar new Chart() para criar um novo chart 
+  e passar dentro dos (parênteses) o elemento canvas que você quer mandar e 
+  separado pela virgula o que você quer mandar, no nosso caso a config que fizemos 
+  */
+ 
+  
+  </script>
+
+  
+
+  
+  
